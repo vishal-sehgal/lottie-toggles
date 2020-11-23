@@ -1,0 +1,3 @@
+include ':lottie-toggles'
+include ':sample'
+rootProject.name = "lottie-toggles"
