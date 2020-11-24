@@ -2,8 +2,8 @@ package dev.vishalsehgal.lottietoggles.view
 
 import android.content.Context
 import android.util.AttributeSet
+import android.widget.Checkable
 import com.airbnb.lottie.LottieAnimationView
-import dev.vishalsehgal.lottietoggles.`interface`.Checkable
 import dev.vishalsehgal.lottietoggles.`interface`.OnCheckChangeListener
 
 open class ToggleableLottieView @JvmOverloads constructor(
@@ -22,22 +22,23 @@ open class ToggleableLottieView @JvmOverloads constructor(
 
     private var mBroadcasting = false
 
-    override var isChecked: Boolean = false
-        set(value) {
-            if (isChecked != value) {
-                field = value
+    private var _checked: Boolean = false
 
-                // To avoid infinite recursions if isChecked/setChecked() is called from a listener
-                if (mBroadcasting) {
-                    return
-                }
-                mBroadcasting = true
+    override fun setChecked(state: Boolean) {
+        if (isChecked != state) {
+            _checked = state
 
-                onCheckedChangeListener?.onCheckedChanged(this, isChecked)
-
-                mBroadcasting = false
+            // To avoid infinite recursions if isChecked/setChecked() is called from a listener
+            if (mBroadcasting) {
+                return
             }
+            mBroadcasting = true
+            onCheckedChangeListener?.onCheckedChanged(this, isChecked)
+            mBroadcasting = false
         }
+    }
+
+    override fun isChecked(): Boolean = _checked
 
     override fun toggle() {
         isChecked = !isChecked
