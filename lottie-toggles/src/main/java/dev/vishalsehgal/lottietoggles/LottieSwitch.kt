@@ -7,7 +7,9 @@ import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.FrameLayout
 import com.airbnb.lottie.LottieDrawable
 import com.airbnb.lottie.RenderMode
+import dev.vishalsehgal.lottietoggles.`interface`.OnCheckChangeListener
 import dev.vishalsehgal.lottietoggles.view.LottiefiedSwitchView
+import dev.vishalsehgal.lottietoggles.view.ToggleableLottieView
 import java.lang.IllegalStateException
 import kotlin.math.min
 
@@ -47,7 +49,7 @@ class LottieSwitch @JvmOverloads constructor(
                 animationFile = style.getResourceId(R.styleable.LottieSwitch_switch_lottieFile, -1)
                 toggleSpeed = style.getFloat(R.styleable.LottieSwitch_switch_toggleSpeed, 3f)
                 isChecked = style.getBoolean(R.styleable.LottieSwitch_switch_checked, false)
-                post{ addView(lottieAnimationView)}
+                post { addView(lottieAnimationView) }
                 style.recycle()
 
             }
@@ -76,11 +78,11 @@ class LottieSwitch @JvmOverloads constructor(
             }
         }
 
-        val measuredHeight = when(heightMode){
-            MeasureSpec.EXACTLY ->{
+        val measuredHeight = when (heightMode) {
+            MeasureSpec.EXACTLY -> {
                 heightSize
             }
-            MeasureSpec.AT_MOST ->{
+            MeasureSpec.AT_MOST -> {
                 min(desiredHeight, heightSize)
             }
             else -> {
@@ -90,6 +92,15 @@ class LottieSwitch @JvmOverloads constructor(
 
         setMeasuredDimension(measuredWidth, measuredHeight)
         measureChild(lottieAnimationView, measuredWidth, measuredHeight)
+    }
+
+    fun setOnCheckedChangedListener(onCheckChangeListener: (Any, Any) -> Unit) {
+        lottieAnimationView.onCheckedChangeListener = object : OnCheckChangeListener {
+            override fun onCheckedChanged(
+                toggleableLottieView: ToggleableLottieView,
+                isChecked: Boolean
+            ) = onCheckChangeListener(toggleableLottieView, isChecked)
+        }
     }
 
 }

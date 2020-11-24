@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <dev.vishalsehgal.lottietoggles.LottieSwitch
+        android:id="@+id/lottie_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
