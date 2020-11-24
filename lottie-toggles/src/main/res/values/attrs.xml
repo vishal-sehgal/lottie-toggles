@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LottieSwitch">
+        <attr name="switch_lottieFile" format="reference"/>
+        <attr name="switch_toggleSpeed" format="float"/>
+        <attr name="switch_checked" format="boolean"/>
+    </declare-styleable>
+</resources>
