@@ -50,9 +50,10 @@ class LottiefiedSwitchView @JvmOverloads constructor(
 
                     if (min > padding && max < this.width - padding) {
                         val progress = (x) / (this.width - padding - centerRadii)
-                        this.progress = progress
-
-                        invalidate()
+                        if (!isAnimating) {
+                            this.progress = progress
+                            invalidate()
+                        }
                     }
 
                     true
@@ -65,12 +66,14 @@ class LottiefiedSwitchView @JvmOverloads constructor(
                     when {
                         span < 100 -> performClick()
                         else -> {
-                            if (x >= this.width ushr 1) {
-                                progress = 1f
-                                super.isChecked = true
-                            } else {
-                                progress = 0f
-                                super.isChecked = false
+                            if (!isAnimating) {
+                                if (x >= this.width ushr 1) {
+                                    progress = 1f
+                                    super.isChecked = true
+                                } else {
+                                    progress = 0f
+                                    super.isChecked = false
+                                }
                             }
                         }
                     }
