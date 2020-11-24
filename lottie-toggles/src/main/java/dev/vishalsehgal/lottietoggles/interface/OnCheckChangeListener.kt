@@ -1,6 +1,6 @@
 package dev.vishalsehgal.lottietoggles.`interface`
 
-import dev.vishalsehgal.lottietoggles.ToggleableLottieView
+import dev.vishalsehgal.lottietoggles.view.ToggleableLottieView
 
 interface OnCheckChangeListener {
 

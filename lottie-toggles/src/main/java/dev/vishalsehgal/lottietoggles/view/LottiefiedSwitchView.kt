@@ -3,7 +3,6 @@ package dev.vishalsehgal.lottietoggles.view
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
-import dev.vishalsehgal.lottietoggles.ToggleableLottieView
 import kotlin.math.abs
 import kotlin.math.min
 

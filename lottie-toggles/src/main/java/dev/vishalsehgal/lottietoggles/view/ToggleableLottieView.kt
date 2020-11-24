@@ -1,4 +1,4 @@
-package dev.vishalsehgal.lottietoggles
+package dev.vishalsehgal.lottietoggles.view
 
 import android.content.Context
 import android.util.AttributeSet
