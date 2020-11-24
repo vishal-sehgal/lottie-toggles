@@ -150,6 +150,11 @@ class LottieSwitch @JvmOverloads constructor(
         }
     }
 
+    override fun setEnabled(enabled: Boolean) {
+        lottieAnimationView.isEnabled = enabled
+        super.setEnabled(enabled)
+    }
+
     override fun onSaveInstanceState(): Parcelable? {
         val superState = super.onSaveInstanceState()
         val ss = SavedState(superState)
