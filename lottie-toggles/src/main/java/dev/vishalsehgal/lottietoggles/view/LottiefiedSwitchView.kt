@@ -1,8 +1,10 @@
 package dev.vishalsehgal.lottietoggles.view
 
 import android.content.Context
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
+import dev.vishalsehgal.lottietoggles.LottieSwitch
 import kotlin.math.abs
 import kotlin.math.min
 
@@ -101,6 +103,23 @@ class LottiefiedSwitchView @JvmOverloads constructor(
         if (this.isEnabled != enabled)
             if (enabled) this.alpha = 1f else this.alpha = 0.5f
         super.setEnabled(enabled)
+    }
+
+
+    override fun onSaveInstanceState(): Parcelable? {
+        val superState = super.onSaveInstanceState()
+        val ss = LottieSwitch.SavedState(superState)
+        ss.checked = isChecked
+        ss.progress = progress
+        return ss
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        val ss = state as LottieSwitch.SavedState
+        super.onRestoreInstanceState(ss.superState)
+        isChecked = ss.checked
+        progress = ss.progress
+        requestLayout()
     }
 
 }

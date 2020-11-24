@@ -2,6 +2,8 @@ package dev.vishalsehgal.lottietoggles
 
 import android.content.Context
 import android.icu.util.Measure
+import android.os.Parcel
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.FrameLayout
@@ -101,6 +103,65 @@ class LottieSwitch @JvmOverloads constructor(
                 isChecked: Boolean
             ) = onCheckChangeListener(toggleableLottieView, isChecked)
         }
+    }
+
+    internal class SavedState : BaseSavedState {
+        var checked = false
+        var progress = 0f
+
+        /**
+         * Constructor called from [LottieSwitch.onSaveInstanceState]
+         */
+        constructor(superState: Parcelable?) : super(superState) {}
+
+        /**
+         * Constructor called from [.CREATOR]
+         */
+        private constructor(`in`: Parcel) : super(`in`) {
+            checked = (`in`.readValue(null) as Boolean?)!!
+            progress = (`in`.readValue(null) as Float?)!!
+        }
+
+        override fun writeToParcel(out: Parcel, flags: Int) {
+            super.writeToParcel(out, flags)
+            out.writeValue(checked)
+            out.writeValue(progress)
+        }
+
+        override fun toString(): String {
+            return ("LottieSwitch.SavedState{"
+                    + Integer.toHexString(System.identityHashCode(this))
+                    + " checked=" + checked + "}"
+                    + " progress=" + progress + "}"
+                    )
+        }
+
+        companion object {
+            val CREATOR: Parcelable.Creator<SavedState?> =
+                object : Parcelable.Creator<SavedState?> {
+                    override fun createFromParcel(`in`: Parcel): SavedState? {
+                        return SavedState(`in`)
+                    }
+
+                    override fun newArray(size: Int): Array<SavedState?> {
+                        return arrayOfNulls(size)
+                    }
+                }
+        }
+    }
+
+    override fun onSaveInstanceState(): Parcelable? {
+        val superState = super.onSaveInstanceState()
+        val ss = SavedState(superState)
+        ss.checked = isChecked
+        return ss
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        val ss = state as SavedState
+        super.onRestoreInstanceState(ss.superState)
+        isChecked = ss.checked
+        requestLayout()
     }
 
 }
