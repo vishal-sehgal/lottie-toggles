@@ -10,7 +10,7 @@ open class ToggleableLottieView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-): LottieAnimationView(context, attrs, defStyleAttr), Checkable{
+) : LottieAnimationView(context, attrs, defStyleAttr), Checkable {
 
     /**
      * Listener used to dispatch toggle events.
@@ -24,11 +24,11 @@ open class ToggleableLottieView @JvmOverloads constructor(
 
     override var isChecked: Boolean = false
         set(value) {
-            if(isChecked != value){
+            if (isChecked != value) {
                 field = value
 
                 // To avoid infinite recursions if isChecked/setChecked() is called from a listener
-                if(mBroadcasting){
+                if (mBroadcasting) {
                     return
                 }
                 mBroadcasting = true

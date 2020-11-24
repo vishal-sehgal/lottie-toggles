@@ -13,7 +13,7 @@ interface OnCheckChangeListener {
     fun onCheckedChanged(toggleableLottieView: ToggleableLottieView, isChecked: Boolean)
 }
 
-interface Checkable{
+interface Checkable {
 
     /**
      * Change the checked state of the LottieToggleableView to the inverse of its current state.

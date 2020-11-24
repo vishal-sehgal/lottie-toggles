@@ -1,7 +1,6 @@
 package dev.vishalsehgal.lottietoggles
 
 import android.content.Context
-import android.icu.util.Measure
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
@@ -96,7 +95,7 @@ class LottieSwitch @JvmOverloads constructor(
         measureChild(lottieAnimationView, measuredWidth, measuredHeight)
     }
 
-    fun setOnCheckedChangedListener(onCheckChangeListener: (Any, Any) -> Unit) {
+    fun setOnCheckedChangedListener(onCheckChangeListener: (ToggleableLottieView, Boolean) -> Unit) {
         lottieAnimationView.onCheckedChangeListener = object : OnCheckChangeListener {
             override fun onCheckedChanged(
                 toggleableLottieView: ToggleableLottieView,
