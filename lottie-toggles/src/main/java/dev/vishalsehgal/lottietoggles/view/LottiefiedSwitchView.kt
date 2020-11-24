@@ -17,17 +17,6 @@ class LottiefiedSwitchView @JvmOverloads constructor(
     private var tapStartTime = 0L
     private var padding = 0
 
-    override var isChecked: Boolean
-        get() = super.isChecked
-        set(value) {
-            super.isChecked = value
-
-            if (!isAnimating) {
-                speed = if (isChecked) abs(speed) else -abs(speed)
-                playAnimation()
-            }
-        }
-
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val parentWidth = MeasureSpec.getSize(widthMeasureSpec)
         val parentHeight = MeasureSpec.getSize(heightMeasureSpec)
@@ -69,10 +58,10 @@ class LottiefiedSwitchView @JvmOverloads constructor(
                             if (!isAnimating) {
                                 if (x >= this.width ushr 1) {
                                     progress = 1f
-                                    super.isChecked = true
+                                    super.setChecked(true)
                                 } else {
                                     progress = 0f
-                                    super.isChecked = false
+                                    super.setChecked(false)
                                 }
                             }
                         }
@@ -98,8 +87,12 @@ class LottiefiedSwitchView @JvmOverloads constructor(
         return true
     }
 
-    override fun toggle() {
-        isChecked = !isChecked
+    override fun setChecked(state: Boolean) {
+        super.setChecked(state)
+        if (!isAnimating) {
+            speed = if (isChecked) abs(speed) else -abs(speed)
+            playAnimation()
+        }
     }
 
     override fun setEnabled(enabled: Boolean) {
@@ -107,7 +100,6 @@ class LottiefiedSwitchView @JvmOverloads constructor(
             if (enabled) this.alpha = 1f else this.alpha = 0.5f
         super.setEnabled(enabled)
     }
-
 
     override fun onSaveInstanceState(): Parcelable? {
         val superState = super.onSaveInstanceState()
