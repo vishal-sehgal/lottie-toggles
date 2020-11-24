@@ -44,7 +44,7 @@ open class ToggleableLottieView @JvmOverloads constructor(
     }
 
     override fun performClick(): Boolean {
-        toggle() // Changing toggle state on clicking the ToggleableLottieView.
+        if(!isAnimating) toggle() // Changing toggle state on clicking the ToggleableLottieView.
         return super.performClick()
     }
 
