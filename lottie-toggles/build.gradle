@@ -1,7 +1,13 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'com.jfrog.bintray'
+    id 'maven-publish'
 }
+
+def libraryGroupId = 'dev.vishalsehgal.android'
+def libraryArtifactId = 'lottie-toggles'
+def libraryVersion = '1.0.0'
 
 android {
     compileSdkVersion 30
@@ -29,6 +35,44 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+// Configure publications using the afterEvaluate() lifecycle method.
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = libraryGroupId
+                artifactId = libraryArtifactId
+                version = libraryVersion
+            }
+        }
+    }
+}
+
+bintray {
+    user = project.property('bintray.user')
+    key = project.property('bintray.user')
+    publications = ['release']
+    publish = true
+    override = true
+
+    configurations = ['archives']
+    pkg {
+        repo = 'Lottie-Toggles'
+        name = libraryArtifactId
+        desc = 'An amazing android library for your own customised lottie toggles(switches).'
+        licenses = ['Apache-2.0']
+        websiteUrl = 'https://github.com/CoderVishalSehgal/lottie-toggles'
+        vcsUrl = 'https://github.com/CoderVishalSehgal/lottie-toggles.git'
+        publicDownloadNumbers = true
+        version {
+            name = libraryVersion
+            released = new Date()
+        }
     }
 }
 

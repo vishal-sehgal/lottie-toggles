@@ -136,6 +136,7 @@ class LottieSwitch @JvmOverloads constructor(
         }
 
         companion object {
+            @JvmField
             val CREATOR: Parcelable.Creator<SavedState?> =
                 object : Parcelable.Creator<SavedState?> {
                     override fun createFromParcel(`in`: Parcel): SavedState? {
