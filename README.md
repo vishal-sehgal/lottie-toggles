@@ -2,6 +2,8 @@
 
 An amazing android library which helps to implement your own custom-designed creative toggles inside the android apps.
 
+[ ![Download](https://api.bintray.com/packages/codervishalsehgal/maven/Lottie-Toggles/images/download.svg) ](https://bintray.com/codervishalsehgal/maven/Lottie-Toggles/_latestVersion) ![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg)
+
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/vishalsehgal) ![Twitter URL](https://img.shields.io/twitter/url?label=Tweet%20LottieToggle&style=social&url=https%3A%2F%2Flottietoggle.vishalsehgal.dev) [![GitHub followers](https://img.shields.io/github/followers/CoderVishalSehgal.svg?style=social&label=Follow)](https://github.com/CoderVishalSehgal/lottie-toggles) ![Twitter Follow](https://img.shields.io/twitter/follow/vishalsehgal31?style=social)
 
 <p align="center"> 
@@ -15,8 +17,6 @@ An amazing android library which helps to implement your own custom-designed cre
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/CoderVishalSehgal/lottie-toggles/blob/master/LICENSE)
-[![Build Status](https://travis-ci.com/CoderVishalSehgal/lottie-toggles.svg?branch=master)](https://travis-ci.com/CoderVishalSehgal/lottie-toggles)
-[![CodeCov](https://codecov.io/gh/CoderVishalSehgal/lottie-toggles/branch/master/graph/badge.svg)](https://codecov.io/gh/CoderVishalSehgal/lottie-toggles)
 
 ## Implementation 💻📲
 
