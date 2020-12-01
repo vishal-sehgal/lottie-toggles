@@ -3,7 +3,18 @@ plugins {
     id 'kotlin-android'
 }
 
+Properties keystoreProperties = new Properties()
+keystoreProperties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
+    signingConfigs {
+        release {
+            storeFile file(keystoreProperties.getProperty("releaseKeyStore"))
+            storePassword keystoreProperties.getProperty("releaseStorePassword")
+            keyAlias keystoreProperties.getProperty("releaseKeyAlias")
+            keyPassword keystoreProperties.getProperty("releaseKeyPassword")
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -12,7 +23,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -21,6 +32,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {

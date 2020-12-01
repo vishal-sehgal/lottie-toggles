@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">lottie-toggles</string>
+    <string name="desc_github_menu">Lottie toggles library on Github Repository.</string>
 </resources>
