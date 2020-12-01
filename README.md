@@ -5,7 +5,7 @@ An amazing android library which helps to implement your own custom-designed cre
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/vishalsehgal) ![Twitter URL](https://img.shields.io/twitter/url?label=Tweet%20LottieToggle&style=social&url=https%3A%2F%2Flottietoggle.vishalsehgal.dev) [![GitHub followers](https://img.shields.io/github/followers/CoderVishalSehgal.svg?style=social&label=Follow)](https://github.com/CoderVishalSehgal/lottie-toggles) ![Twitter Follow](https://img.shields.io/twitter/follow/vishalsehgal31?style=social)
 
 <p align="center"> 
-<img src="https://github.com/CoderVishalSehgal/temp-res-testing/blob/main/Lottie_toggle_bannerre.gif" width="60%" height="60%">
+<img src="https://user-images.githubusercontent.com/20669217/100385522-dbe61680-3048-11eb-9f54-49794d3bc171.gif" width="60%" height="60%">
 </p>
 
 ### Show some 💙 and 🌟 the repo to support the project
