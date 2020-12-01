@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:switch_lottieFile="@raw/monster_toggle" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch0"
+            app:switch_lottieFile="@raw/day_night_toggle" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch1"
+            app:switch_lottieFile="@raw/gender_switch" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch2"
+            app:switch_lottieFile="@raw/heart_pop_switch" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch3"
+            app:switch_lottieFile="@raw/jelly_switch" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch4"
+            app:switch_lottieFile="@raw/jelly_switch_two" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch5"
+            app:switch_lottieFile="@raw/lemon_orange_toggle" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch6"
+            app:switch_lottieFile="@raw/location_service_switch" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch7"
+            app:switch_lottieFile="@raw/morphing_switch" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lottieSwitch10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch8"
+            app:switch_lottieFile="@raw/simple_toggle" />
+
+        <dev.vishalsehgal.lottietoggles.LottieSwitch
+            android:id="@+id/lottieSwitch10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottieSwitch9"
+            app:switch_lottieFile="@raw/squashy_toggle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

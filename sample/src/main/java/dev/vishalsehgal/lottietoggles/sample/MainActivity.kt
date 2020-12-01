@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         val container = findViewById<ConstraintLayout>(R.id.container)
 
-        findViewById<LottieSwitch>(R.id.lottie_switch).setOnCheckedChangedListener { toggleableView, isChecked ->
+        findViewById<LottieSwitch>(R.id.lottieSwitch0).setOnCheckedChangedListener { toggleableView, isChecked ->
             Toast.makeText(this, isChecked.toString(), Toast.LENGTH_SHORT).show()
 
             container.setBackgroundColor(if (isChecked) Color.BLACK else Color.WHITE)
