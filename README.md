@@ -10,6 +10,9 @@ An amazing android library which helps to implement your own custom-designed cre
 <img src="https://user-images.githubusercontent.com/20669217/100385522-dbe61680-3048-11eb-9f54-49794d3bc171.gif" width="60%" height="60%">
 </p>
 
+<p align="center">Download and try out the sample app in your mobile 📲</p>
+<p align="center"><a href='https://play.google.com/store/apps/details?id=dev.vishalsehgal.lottietoggles.sample'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="60px"/></a></p>
+
 ### Show some 💙 and 🌟 the repo to support the project
 
 [![GitHub stars](https://img.shields.io/github/stars/CoderVishalSehgal/lottie-toggles.svg?style=social&label=Star%20me)](https://github.com/CoderVishalSehgal/lottie-toggles)   [![GitHub forks](https://img.shields.io/github/forks/CoderVishalSehgal/lottie-toggles.svg?style=social&label=Fork%20me)](https://github.com/CoderVishalSehgal/lottie-toggles/fork)   [![GitHub watchers](https://img.shields.io/github/watchers/CoderVishalSehgal/lottie-toggles.svg?style=social&label=Watch)](https://github.com/CoderVishalSehgal/lottie-toggles)   \
