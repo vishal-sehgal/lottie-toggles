@@ -6,12 +6,12 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.FrameLayout
+import androidx.databinding.BindingAdapter
 import com.airbnb.lottie.LottieDrawable
 import com.airbnb.lottie.RenderMode
 import dev.vishalsehgal.lottietoggles.`interface`.OnCheckChangeListener
 import dev.vishalsehgal.lottietoggles.view.LottiefiedSwitchView
 import dev.vishalsehgal.lottietoggles.view.ToggleableLottieView
-import java.lang.IllegalStateException
 import kotlin.math.min
 
 class LottieSwitch @JvmOverloads constructor(
@@ -23,7 +23,18 @@ class LottieSwitch @JvmOverloads constructor(
     private var animationFile: Int = -1
     private var toggleSpeed = 1f
 
-    internal var isChecked: Boolean
+    companion object {
+        @BindingAdapter("app:switch_lottieFile")
+        @JvmStatic
+        fun setAnimationFile(lottieSwitch: LottieSwitch, switchFile: Int = -1) {
+            if (lottieSwitch.lottieAnimationView.animation == null) {
+                lottieSwitch.lottieAnimationView.setAnimation(switchFile)
+            }
+        }
+
+    }
+
+    var isChecked: Boolean
         get() = this.lottieAnimationView.isChecked
         set(value) {
             this.lottieAnimationView.isChecked = value
@@ -31,14 +42,12 @@ class LottieSwitch @JvmOverloads constructor(
 
     private val lottieAnimationView by lazy {
         LottiefiedSwitchView(context).apply {
-            if (animationFile == -1)
-                throw IllegalStateException("Could not resolve the lottie switch toggle animation file")
-
             layoutParams = LayoutParams(MATCH_PARENT, MATCH_PARENT)
             repeatMode = LottieDrawable.REVERSE
             setRenderMode(RenderMode.AUTOMATIC)
             speed = toggleSpeed
-            setAnimation(animationFile)
+            if (animationFile != -1)
+                setAnimation(animationFile)
         }
     }
 
